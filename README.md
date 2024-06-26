@@ -14,4 +14,9 @@ conda install pytorch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 pytorch-cuda=
 
 # Step 3
 pip install openmim
-mim install "mmengine" "mmcv>=2.0.0rc4" "mmdet>=3.0.0" 
+mim install "mmengine" "mmcv>=2.0.0rc4" "mmdet>=3.0.0"
+
+# Step 4 
+git clone https://github.com/open-mmlab/mmdetection3d.git -b dev-1.x
+cd mmdetection3d
+pip install -v -e .
