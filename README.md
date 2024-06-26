@@ -17,6 +17,8 @@ pip install openmim
 mim install "mmengine" "mmcv>=2.0.0rc4" "mmdet>=3.0.0"
 
 # Step 4 
+if necessary:
 git clone https://github.com/open-mmlab/mmdetection3d.git -b dev-1.x
+
 cd mmdetection3d
 pip install -v -e .
