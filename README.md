@@ -8,10 +8,6 @@ Este projeto documenta o processo de configuração de um ambiente de desenvolvi
 3. [Configuração do Ambiente Miniconda](#configuração-do-ambiente-miniconda)
 4. [Instalação do CUDA Toolkit e Pacotes Essenciais](#instalação-do-cuda-toolkit-e-pacotes-essenciais)
 5. [Instalação e Configuração do MMDetection3D](#instalação-e-configuração-do-mmdetection3d)
-6. [Pré-processamento das Nuvens de Pontos](#pré-processamento-das-nuvens-de-pontos)
-7. [Detecção e Inferência das Caixas Delimitadoras](#detecção-e-inferência-das-caixas-delimitadoras)
-8. [Remoção de Caixas Delimitadoras de Volumes](#remoção-de-caixas-delimitadoras-de-volumes)
-9. [Exibição dos Resultados](#exibição-dos-resultados)
 
 ## Configuração do WSL 2.0 e Ubuntu 22.04.3 LTS
 
