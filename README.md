@@ -1,4 +1,4 @@
-# Ambiente de Desenvolvimento para Processamento de Nuvens de Pontos com MMDetection3D
+# Ambiente de Desenvolvimento para Inferência das Nuvens de Pontos com MMDetection3D
 
 Este projeto documenta o processo de configuração de um ambiente de desenvolvimento para o processamento de nuvens de pontos, utilizando ferramentas como WSL 2.0, Ubuntu, Miniconda, CUDA Toolkit, PyTorch, MMDetection3D, e outras bibliotecas essenciais.
 
@@ -8,6 +8,7 @@ Este projeto documenta o processo de configuração de um ambiente de desenvolvi
 3. [Configuração do Ambiente Miniconda](#configuração-do-ambiente-miniconda)
 4. [Instalação do CUDA Toolkit e Pacotes Essenciais](#instalação-do-cuda-toolkit-e-pacotes-essenciais)
 5. [Instalação e Configuração do MMDetection3D](#instalação-e-configuração-do-mmdetection3d)
+6. [Detecção e Inferência das Caixas Delimitadoras](#detecção-e-inferência-das-caixas-delimitadoras)
 
 ## Configuração do WSL 2.0 e Ubuntu 22.04.3 LTS
 
@@ -68,6 +69,27 @@ Este projeto documenta o processo de configuração de um ambiente de desenvolvi
      pip install mmengine mmcv>=2.0.0rc4 mmdet>=3.0.0
      pip install -e .
     ```
+
+## Detecção e Inferência das Caixas Delimitadoras
+
+1. Realize o downlaod do modelo pré-treinado se necessário.
+   ```bash
+   pip install -U openmim
+   mim download mmdet3d --config votenet_8xb16_sunrgbd-3d.py --dest
+   ```   
+2. Para realizar a inferência, assegure-se de que todo o ambiente está devidamente configurado com os pré-requisitos necessários e execute o seguinte comando no terminal:
+   ```bash
+   python ./mmdetection3d/demo/pcd_demo.py ./input.bin \
+    ./votenet_8xb16_sunrgbd-3d.py \
+    ./votenet_16x8_sunrgbd-3d-10class_20210820_162823-bf11f014.pth
+   ```
+
+Aqui estão os detalhes dos caminhos e parâmetros utilizados para a execução do comando:
+
+- ```./mmdetection3d/demo/pcd_demo.py:``` Caminho para o script de inferência disponibilizada. Carrega o modelo, processa a nuvem de pontos e gera previsões.
+- ```./input.bin:``` Arquivo contendo a nuvem de pontos a ser processada.
+- ```./votenet_8xb16_sunrgbd-3d.py:``` Arquivo de configuração do modelo, com definições e hiperparâmetros para a inferência.
+- ```./votenet_16x8_sunrgbd-3d-10class_20210820_162823-bf11f014.pth:``` Arquivo de checkpoint com os pesos do modelo treinado para inferência.
 
 ## Referências
 
